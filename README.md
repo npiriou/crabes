@@ -1,0 +1,3 @@
+🇫🇷 Les Crabes est mon premier jeu Javascript et ma première expérience de création d'une application web. Ce jeu a été créé sans suivre aucun tutoriel et en toute méconnaissance des bonnes pratiques de programmation. Je le re-upload ce 24/11/2020 pour lui faire son propre dossier, mais le jeu date de septembre 2020.
+
+🇬🇧 Les Crabes is my first Javascript game and my first experience of creating a web application. This game was created without following any tutorial and without any knowledge of good programming practices. I re-uploaded it at the end of November 2020 to give it its own file, but the game was made in September 2020.
