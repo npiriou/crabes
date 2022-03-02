@@ -20,150 +20,16 @@
 
 <head>
 	<link href="http://fonts.googleapis.com/css?family=Corben" rel="stylesheet" type="text/css">
-
-
-	<style>
-		body {
-			background: url('cream_dust.png') repeat 0 0;
-			background: url('pool_table.png');
-		}
-
-#divinfosvague{
-	border-radius: 10px;
-}
-#statusenrobage{
-	border-radius: 10px;
-}
-		td.carteB {
-			border-radius: 15px;
-			background-image: url('pool_table.png');
-			width:180px;
-			height:275px;
-		}
-
-		td.carteM {
-			border-radius: 15px;
-			background-image: url('cream_dust.png');
-			width:180px;
-			height:275px;
-		}
-
-		div.tranchaff {
-			width: 32px;
-			height: 32px;
-			background: #ff9100;
-		}
-
-		div.peraff {
-			width: 32px;
-			height: 32px;
-			background: #beafaf;
-		}
-
-		div.magaff {
-			width: 32px;
-			height: 32px;
-			background: #707ce9;
-		}
-
-		div.diceaff {
-			border-radius: 1px;
-			border: #999 1px solid;
-			font-size: 24px;
-			text-align: center;
-			vertical-align: middle;
-			margin: 5px;
-			display: inline-block;
-		}
-
-
-
-		#carteDivision {
-			display: flex;
-			justify-content: center;
-		}
-
-		table,
-		th,
-		td {
-			border: 1px solid black;
-		}
-
-		#mainContainer {
-			display: flex;
-			justify-content: space-around;
-		}
-
-		#cardContainer {
-			display: flex;
-			justify-content: center;
-		}
-
-		#handContainer {
-			display: flex;
-			justify-content: center;
-		}
-
-
-
-		div.dicemob {
-			border-radius: 1px;
-			border: #999 1px solid;
-			font-size: 24px;
-			text-align: center;
-			vertical-align: middle;
-			margin: 5px;
-			display: inline-block;
-		}
-
-		div.dice {
-			border-radius: 1px;
-			border: #999 1px solid;
-			font-size: 24px;
-			text-align: center;
-			vertical-align: middle;
-			margin: 5px;
-			display: inline-block;
-		}
-
-		div.tranch {
-			width: 32px;
-			height: 32px;
-			background: #ff9100;
-		}
-
-		div.per {
-			width: 32px;
-			height: 32px;
-			background: #beafaf;
-		}
-
-		div.mag {
-			width: 32px;
-			height: 32px;
-			background: #707ce9;
-		}
-
-		div.magenoir {
-			border: rgb(3, 3, 3) 3px solid;
-			background: #3542b8;
-		}
-
-		div.mob {
-			width: 40px;
-			height: 40px;
-			background: #ffffff;
-		}
-	</style>
+	<link rel="stylesheet" href="styles.css">
 	<title>Les crabes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- adaptation mobile-->
 </head>
 
-<body style=" overflow-x:auto; overflow-y:auto;">
+<body>
 
-	<div style="height:20%;">
+	<div id="main">
 		<div id="mainContainer">
-			<div style="float:left;width:40%;height:350px; background: url('cream_dust.png')">
+			<div  id="mainContainer-player-dices">
 
 				<p id="partr">Attaques Tranchantes
 				</p>
@@ -182,7 +48,7 @@
 
 
 
-			<div style="float:left;width:40%;height:350px; background: url('cream_dust.png')">
+			<div id="mainContainer-mob-dices">
 
 				<h4>Monstres restants :</h4>
 				<p id="parmob"></p>
@@ -191,35 +57,39 @@
 			</div>
 
 		</div>
-		<span id="sectionscore" style="float:left;height: 30px;margin-left:15%" class="badge badge-primary">Score :
+		<span id="sectionscore" class="badge badge-primary">Score :
 			0<br></span>
-		<span id="sectionleak" style="float:left;height: 30px;" class="badge badge-danger">0 leak<br></span>
-		<span id="sectionlumber" style="float:left;height: 30px;" class="badge badge-success">0 ouvrier<br></span>
-		<span id="sectiongold" style="float:left;height: 30px;" class="badge badge-warning">20 gold<br></span>
-		<button id="boutonRoll" class="btn btn-warning" onclick="advRoll()"
-			style="float:left; margin-left: 19%; ">Lancer mes dés</button>
+		<span id="sectionleak"  class="badge badge-danger">0 leak<br></span>
+		<span id="sectionlumber"  class="badge badge-success">0 ouvrier<br></span>
+		<span id="sectiongold" class="badge badge-warning">20 gold<br></span>
+		<button id="boutonRoll" class="btn btn-warning" onclick="advRoll()">Lancer mes dés</button>
 
-		<button id="boutonRollMob" class="btn btn-danger" onclick="rollMob()"
-			style="float:right; margin-right: 45%; ">Lancer pour
+		<button id="boutonRollMob" class="btn btn-danger" onclick="rollMob()">Lancer pour
 			l'ennemi</button>
-			<button id="boutonCombat" class="btn btn-warning" style="float:left; margin-left: 19%; "
-					onclick="combat()">Prêt</button>
+			<button id="boutonCombat" class="btn btn-warning" onclick="combat()">Prêt</button>
 		<br /> <br />
 
 
 
-		<div id="cardContainer" style="height: 560px;">
+		<div id="cardContainer">
 
-			<div id="statusenrobage" style="float:left; margin-right:10px; margin-left:10px; 
-			width:450px; height:420px; overflow:auto; background: url('cream_dust.png')">
-				<p id="status" style="clear:left; ">
+			<div id="statusenrobage" class="divInfos">
+				<p id="status">
 					<a href="regles.html" onclick="window.open(this.href); return false;"><b>Clique ici pour découvrir
 							les règles du jeu</b></a> <br/>
 						Pictures used here do not belong to me. I'll remove your pictures ASAP if you ask me by mail : npiriou@yopmail.com
 					</p>
 			</div>
-
-			<div style="float:left;">
+			<div id="divinfosvague" class="divInfos">
+				<h4 id="infosvagues" >
+					<p id="status2">
+					<div class="diceaff tranchaff">0</div>
+					<div class="diceaff peraff">0</div>
+					<div class="diceaff magaff">0</div>
+					</p>
+				</h4>
+			</div>
+			<div id="cardContainer-under">
 				<table>
 					<tr>
 						<td id="Cell1" class="carteB" 
@@ -263,60 +133,41 @@
 
 
 			
-			<div id="divinfosvague" style="float:left;  margin-left:10px; 
-			width:450px; height:420px; overflow:auto; background: url('cream_dust.png')">
-				<h4 id="infosvagues" style="clear:left; ">
-					<p id="status2" style="clear:left;">
-					<div class="diceaff tranchaff">0</div>
-					<div class="diceaff peraff">0</div>
-					<div class="diceaff magaff">0</div>
-					</p>
-				</h4>
-			</div>
+
 		</div>
-		<div style="height :40px; ">
-		<button id="boutonVente" onclick="vente()" class="btn btn-secondary" style="margin-left : 48%;height :25px">Vendre</button>
+		<div id="divBoutonVente">
+		<button id="boutonVente" onclick="vente()" class="btn btn-secondary">Vendre</button>
 	</div>
-		<div id="handContainer" style="height: 300px;">
-			<div style="float:left;">
-				<table>
+		<div id="handContainer">
+			<div id="handContainer-under">
+						<div class="carteM" id="CellM1" onmouseover="shadowBlue('CellM1', 'main', 0)"
+							onmouseout="noShadow('CellM1', 'main', 0)" onclick="pickM(0)"></div>
+						<div class="carteM" id="CellM2" onmouseover="shadowBlue('CellM2', 'main', 1)"
+							onmouseout="noShadow('CellM2', 'main', 1)" onclick="pickM(1)"></div>
 
-					<tr>
-						<td class="carteAchatLumber" id="carteAchatLumber">
-							<button id="boutonAchatLumber" type="button" class="btn btn-success"
-								onclick="achatLumber()">Acheter un ouvrier<br />5 gold</button>
-						</td>
+						<div class="carteM" id="CellM3" onmouseover="shadowBlue('CellM3', 'main', 2)"
+							onmouseout="noShadow('CellM3', 'main', 2)" onclick="pickM(2)"></div>
 
-						<td class="carteM" id="CellM1" onmouseover="shadowBlue('CellM1', 'main', 0)"
-							onmouseout="noShadow('CellM1', 'main', 0)" onclick="pickM(0)"></td>
-						<td class="carteM" id="CellM2" onmouseover="shadowBlue('CellM2', 'main', 1)"
-							onmouseout="noShadow('CellM2', 'main', 1)" onclick="pickM(1)"></td>
+						<div class="carteM" id="CellM4" onmouseover="shadowBlue('CellM4', 'main', 3)"
+							onmouseout="noShadow('CellM4', 'main', 3)" onclick="pickM(3)"></div>
 
-						<td class="carteM" id="CellM3" onmouseover="shadowBlue('CellM3', 'main', 2)"
-							onmouseout="noShadow('CellM3', 'main', 2)" onclick="pickM(2)"></td>
-
-						<td class="carteM" id="CellM4" onmouseover="shadowBlue('CellM4', 'main', 3)"
-							onmouseout="noShadow('CellM4', 'main', 3)" onclick="pickM(3)"></td>
-
-						<td class="carteM" id="CellM5" onmouseover="shadowBlue('CellM5', 'main', 4)"
-							onmouseout="noShadow('CellM5', 'main', 4)" onclick="pickM(4)"></td>
-
-						<td class="carteAchatLumber" id="carteAchatLumber">
+						<div class="carteM" id="CellM5" onmouseover="shadowBlue('CellM5', 'main', 4)"
+							onmouseout="noShadow('CellM5', 'main', 4)" onclick="pickM(4)"></div>
+			</div>
+			<div class="carteAchatLumber" id="carteAchatLumber">
+				<button id="boutonAchatLumber" type="button" class="btn btn-success"
+					onclick="achatLumber()">Acheter un ouvrier<br />5 gold</button>
+			</div>
+			<div class="carteAchatLumber" id="carteReRollShop">
 							
-							<button id="boutonreRollBoutiqueFree" type="button" class="btn btn-secondary"
-								onclick="reRollBoutiqueFree()">Re-roll la boutique<br />Gratuit</button>
-							<button id="boutonreRollBoutique2G" type="button" class="btn btn-secondary"
-								onclick="reRollBoutique2G()">Re-roll la boutique<br />2 gold</button>
-								
-		
+				<button id="boutonreRollBoutiqueFree" type="button" class="btn btn-secondary"
+					onclick="reRollBoutiqueFree()">Re-roll la boutique<br />Gratuit</button>
+				<button id="boutonreRollBoutique2G" type="button" class="btn btn-secondary"
+					onclick="reRollBoutique2G()">Re-roll la boutique<br />2 gold</button>
+					
 
-						</td>
-					</tr>
-
-				</table>
 
 			</div>
-
 		</div>
 </body>
 

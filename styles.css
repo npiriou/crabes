@@ -1,0 +1,266 @@
+body {
+  background: url("cream_dust.png") repeat 0 0;
+  background: url("pool_table.png");
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.carteB {
+  border-radius: 15px;
+  background-image: url("pool_table.png");
+  width: 180px;
+  height: 275px;
+}
+
+.carteM {
+  border-radius: 15px;
+  background-image: url("cream_dust.png");
+  width: 180px;
+  height: 275px;
+}
+
+div.tranchaff {
+  width: 32px;
+  height: 32px;
+  background: #ff9100;
+}
+
+div.peraff {
+  width: 32px;
+  height: 32px;
+  background: #beafaf;
+}
+
+div.magaff {
+  width: 32px;
+  height: 32px;
+  background: #707ce9;
+}
+
+div.diceaff {
+  border-radius: 1px;
+  border: #999 1px solid;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  display: inline-block;
+}
+
+#carteDivision {
+  display: flex;
+  justify-content: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+#main {
+  height: 20%;
+}
+
+#mainContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* height: 560px; */
+}
+
+#cardContainer-under {
+  float: left;
+  order: 2;
+}
+#divinfosvague {
+  order: 3;
+}
+#statusenrobage {
+  order: 1;
+}
+
+@media only screen and (max-width: 1670px) {
+  #cardContainer-under {
+    order: 3;
+  }
+  #divinfosvague {
+    order: 2;
+  }
+  #statusenrobage {
+    order: 1;
+  }
+}
+
+#infosvagues {
+  clear: left;
+}
+
+#status2 {
+  clear: left;
+}
+
+.divInfos {
+  border-radius: 10px;
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 450px;
+  height: 420px;
+  max-width: 40vw;
+  overflow: auto;
+  background: url("cream_dust.png");
+}
+
+#status {
+  clear: left;
+}
+#handContainer {
+  display: flex;
+  justify-content: center;
+  /* height: 300px; */
+  flex-wrap: wrap;
+}
+
+#handContainer-under {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  order: 2;
+}
+
+div.dicemob {
+  border-radius: 1px;
+  border: #999 1px solid;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  display: inline-block;
+}
+
+div.dice {
+  border-radius: 1px;
+  border: #999 1px solid;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  display: inline-block;
+}
+
+div.tranch {
+  width: 32px;
+  height: 32px;
+  background: #ff9100;
+}
+
+div.per {
+  width: 32px;
+  height: 32px;
+  background: #beafaf;
+}
+
+div.mag {
+  width: 32px;
+  height: 32px;
+  background: #707ce9;
+}
+
+div.magenoir {
+  border: rgb(3, 3, 3) 3px solid;
+  background: #3542b8;
+}
+
+div.mob {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+}
+
+#mainContainer-player-dices {
+  float: left;
+  width: 40%;
+  height: 350px;
+  background: url("cream_dust.png");
+}
+
+#mainContainer-mob-dices {
+  float: left;
+  width: 40%;
+  height: 350px;
+  background: url("cream_dust.png");
+}
+
+#sectionscore {
+  float: left;
+  height: 30px;
+  margin-left: 15%;
+}
+
+#sectionleak {
+  float: left;
+  height: 30px;
+}
+
+#sectionlumber {
+  float: left;
+  height: 30px;
+}
+
+#sectiongold {
+  float: left;
+  height: 30px;
+}
+
+#boutonRoll {
+}
+
+#boutonRollMob {
+}
+
+#boutonCombat {
+  float: left;
+  margin-left: 19%;
+}
+
+#boutonVente {
+  margin-left: 48%;
+  height: 25px;
+}
+
+#divBoutonVente {
+  height: 40px;
+}
+#carteAchatLumber {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+#carteReRollShop {
+  display: flex;
+  align-items: center;
+  order: 3;
+}
+
+#handContainer-under {
+  order: 2;
+}
+
+@media only screen and (max-width: 1670px) {
+  #carteAchatLumber {
+    order: 2;
+  }
+  #carteReRollShop {
+    order: 3;
+  }
+
+  #handContainer-under {
+    order: 1;
+  }
+}
